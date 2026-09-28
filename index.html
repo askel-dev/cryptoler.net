@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>cryptoler</title>
-<meta name="description" content="Nobody's Meadow, The Eye and Ödemark.">
+<meta name="description" content="Nobody's Meadow, Noctiluca, The Eye and Ödemark.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
@@ -23,6 +23,7 @@
     --shadow: 0 1px 2px rgba(29, 28, 26, .05), 0 10px 28px -14px rgba(29, 28, 26, .2);
     --lift: 0 2px 4px rgba(29, 28, 26, .06), 0 20px 44px -18px rgba(29, 28, 26, .32);
     --meadow: #4f7d39;
+    --noctiluca: #1d6a8f;
     --eye: #2a6a4a;
     --odemark: #8c491a;
     --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -37,6 +38,7 @@
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 28px -14px rgba(0, 0, 0, .7);
       --lift: 0 2px 4px rgba(0, 0, 0, .35), 0 20px 44px -18px rgba(0, 0, 0, .85);
       --meadow: #9cc77e;
+      --noctiluca: #78dcff;
       --eye: #6fae8c;
       --odemark: #e9975c;
     }
@@ -73,12 +75,12 @@
 
   main {
     width: 100%;
-    max-width: 1080px;
+    max-width: 880px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  @media (max-width: 860px) {
+  @media (max-width: 640px) {
     main { grid-template-columns: 1fr; max-width: 480px; }
     body { justify-content: flex-start; gap: 32px; padding-top: 40px; }
   }
@@ -98,6 +100,7 @@
   .app:hover { transform: translateY(-3px); box-shadow: var(--lift); }
   .app:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .app.meadow { --accent: var(--meadow); }
+  .app.noctiluca { --accent: var(--noctiluca); }
   .app.eye { --accent: var(--eye); }
   .app.odemark { --accent: var(--odemark); }
 
@@ -164,7 +167,7 @@
 <body>
 
 <header>
-  <h1><span class="dots" aria-hidden="true"><i style="background:#d9a441"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler</h1>
+  <h1><span class="dots" aria-hidden="true"><i style="background:#d9a441"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler</h1>
 </header>
 
 <main>
@@ -174,6 +177,15 @@
       <div class="top"><h2>Nobody's Meadow</h2><span class="tag">Game</span></div>
       <p>A small meadow that keeps its own time. Rabbits, foxes and bees live their lives, season after season.</p>
       <span class="url">meadow.cryptoler.net</span>
+    </div>
+  </a>
+
+  <a class="app noctiluca" href="https://askel-dev.github.io/NOCTILUCA/">
+    <div class="cover"><img src="assets/noctiluca.jpg" alt="" width="800" height="420"></div>
+    <div class="about">
+      <div class="top"><h2>Noctiluca</h2><span class="tag">Ambient · sound</span></div>
+      <p>Two hundred bioluminescent organisms drifting through dark water, and the sound they make while doing it.</p>
+      <span class="url">noctiluca.cryptoler.net</span>
     </div>
   </a>
 
