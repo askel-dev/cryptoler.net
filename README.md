@@ -20,4 +20,13 @@ Each card's cover is its project's own first screen in miniature: the meadow's s
 Noctiluca's splash over the live flock (captured from the page, prompt hidden), The Eye's login lockup (`assets/eye.svg`, its logo fixed to black), Ödemark's front page. To add a
 project, copy a `.app` card and give it a colour of its own in `:root`.
 
+The link preview is `og.jpg`, drawn from `tools/og.html` (the four covers two by two). After changing a card,
+redraw it and bump the `?v=` on `og:image` and `twitter:image` in `index.html`:
+
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars \
+      --window-size=1200,630 --virtual-time-budget=4000 --screenshot=og.png tools/og.html
+    sips -s format jpeg -s formatOptions 88 og.png --out og.jpg && rm og.png
+
+`tools/` and this README aren't deployed (`.vercelignore`).
+
 Preview locally: `python3 -m http.server 8790`, then http://localhost:8790.

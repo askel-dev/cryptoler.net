@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- The link preview (og.jpg, 1200x630): the four covers two by two, the name over the middle.
+     Redraw it when a card changes; the README says how. The cover rules are the ones in index.html. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; }
+  body { width: 1200px; height: 630px; background: #f3f1ec; position: relative; overflow: hidden; }
+  .grid {
+    position: absolute; inset: 0; padding: 12px;
+    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px;
+  }
+  .cover { position: relative; overflow: hidden; border-radius: 14px; container-type: inline-size; }
+  .cover > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .cover.eye { display: grid; place-items: center; background: #e8e8e8; }
+  .lockup { display: flex; align-items: center; gap: 3.5cqw; color: #1a1a1a; font: 400 7cqw/1 Cinzel, Georgia, serif; letter-spacing: .1em; }
+  .lockup img { width: 23cqw; height: auto; }
+
+  .cover.odemark { background: #f5ead8; color: #201e1d; }
+  .cover.odemark > img {
+    position: absolute; inset: 0 0 auto; height: 62%; object-position: 50% 45%;
+    -webkit-mask-image: linear-gradient(#000 45%, transparent); mask-image: linear-gradient(#000 45%, transparent);
+  }
+  .cover.odemark .mark { position: absolute; left: 6.5cqw; bottom: 5.5cqw; display: flex; flex-direction: column; gap: 2.2cqw; }
+  .cover.odemark svg { width: 10cqw; height: auto; display: block; }
+  .cover.odemark b { font: 400 7.5cqw/1 "IM Fell DW Pica", Georgia, serif; letter-spacing: .02em; }
+
+  .badge {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    display: flex; align-items: center; gap: 18px;
+    padding: 22px 36px; border-radius: 999px; background: #fbfaf7;
+    box-shadow: 0 0 0 12px #f3f1ec, 0 18px 40px -12px rgba(29, 28, 26, .35);
+    font: 500 44px/1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .04em; color: #1d1c1a;
+  }
+  .dots { display: flex; gap: 8px; }
+  .dots i { width: 15px; height: 15px; border-radius: 50%; }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="cover"><img src="../assets/meadow.jpg" alt=""></div>
+  <div class="cover"><img src="../assets/noctiluca.jpg" alt=""></div>
+  <div class="cover eye"><div class="lockup">THE<img src="../assets/eye.svg" alt="">EYE</div></div>
+  <div class="cover odemark">
+    <img src="../assets/odemark.jpg" alt="">
+    <div class="mark">
+      <svg viewBox="0 0 62 30">
+        <path d="M2 24 L16 9 L25 17 L34 5 L48 24 Z" fill="#201e1d"/>
+        <circle cx="52" cy="7" r="5" fill="#c67139"/>
+        <path d="M6 27.5 H44 M14 30 H52" stroke="#201e1d" stroke-width="1.4" fill="none"/>
+      </svg>
+      <b>ÖDEMARK</b>
+    </div>
+  </div>
+</div>
+<div class="badge">
+  <span class="dots"><i style="background:#d9a441"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler
+</div>
+</body>
+</html>
