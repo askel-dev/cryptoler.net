@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>cryptoler</title>
+<meta name="description" content="Nobody's Meadow, The Eye and Ödemark.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Only the two faces the covers need: The Eye's Cinzel and Ödemark's IM Fell. The rest is the system's. -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3f1ec;
+    --card: #fbfaf7;
+    --line: #e2ded5;
+    --text: #1d1c1a;
+    --muted: #6b675f;
+    --shadow: 0 1px 2px rgba(29, 28, 26, .05), 0 10px 28px -14px rgba(29, 28, 26, .2);
+    --lift: 0 2px 4px rgba(29, 28, 26, .06), 0 20px 44px -18px rgba(29, 28, 26, .32);
+    --meadow: #4f7d39;
+    --eye: #2a6a4a;
+    --odemark: #8c491a;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141311;
+      --card: #1c1b18;
+      --line: #2d2b27;
+      --text: #ece8df;
+      --muted: #9a958b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 28px -14px rgba(0, 0, 0, .7);
+      --lift: 0 2px 4px rgba(0, 0, 0, .35), 0 20px 44px -18px rgba(0, 0, 0, .85);
+      --meadow: #9cc77e;
+      --eye: #6fae8c;
+      --odemark: #e9975c;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 56px max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left));
+  }
+
+  h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font: 500 22px/1 var(--mono);
+    letter-spacing: .04em;
+  }
+  .dots { display: inline-flex; gap: 5px; }
+  .dots i { width: 8px; height: 8px; border-radius: 50%; }
+
+  main {
+    width: 100%;
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 860px) {
+    main { grid-template-columns: 1fr; max-width: 480px; }
+    body { justify-content: flex-start; gap: 32px; padding-top: 40px; }
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .app:hover { transform: translateY(-3px); box-shadow: var(--lift); }
+  .app:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .app.meadow { --accent: var(--meadow); }
+  .app.eye { --accent: var(--eye); }
+  .app.odemark { --accent: var(--odemark); }
+
+  .about { flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 18px; }
+  .about .top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  h2 { margin: 0; font-size: 17px; font-weight: 650; }
+  .tag { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .about p { margin: 0; color: var(--muted); text-wrap: pretty; }
+  .url {
+    margin-top: auto;
+    padding-top: 10px;
+    font: 13px/1.4 var(--mono);
+    color: var(--accent);
+  }
+  .url::after { content: "→"; display: inline-block; margin-left: .5em; transition: transform .2s ease; }
+  .app:hover .url::after { transform: translateX(3px); }
+
+  /* Each cover is its app's own first screen, in miniature. Its colours stay the app's in dark mode too. */
+  .cover {
+    position: relative;
+    aspect-ratio: 1200 / 630;
+    overflow: hidden;
+    container-type: inline-size;
+    border-bottom: 1px solid var(--line);
+  }
+  .cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* The Eye: the login lockup (sized on the inner box, since cqw on the container itself would measure the page) */
+  .cover.eye { display: grid; place-items: center; background: #e8e8e8; }
+  .lockup {
+    display: flex;
+    align-items: center;
+    gap: 3.5cqw;
+    color: #1a1a1a;
+    font: 400 7cqw/1 Cinzel, Georgia, serif;
+    letter-spacing: .1em;
+  }
+  .lockup img { width: 23cqw; height: auto; }
+
+  /* Ödemark: the front page, a photo fading into paper */
+  .cover.odemark { background: #f5ead8; color: #201e1d; }
+  .cover.odemark img {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 62%;
+    object-position: 50% 45%;
+    -webkit-mask-image: linear-gradient(#000 45%, transparent);
+    mask-image: linear-gradient(#000 45%, transparent);
+  }
+  .cover.odemark .mark { position: absolute; left: 6.5cqw; bottom: 5.5cqw; display: flex; flex-direction: column; gap: 2.2cqw; }
+  .cover.odemark svg { width: 10cqw; height: auto; display: block; }
+  .cover.odemark b { font: 400 7.5cqw/1 "IM Fell DW Pica", Georgia, serif; letter-spacing: .02em; }
+
+  footer { font-size: 13px; color: var(--muted); }
+  footer a { color: inherit; text-underline-offset: 3px; }
+  footer a:hover { color: var(--text); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .app, .url::after { transition: none; }
+    .app:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span class="dots" aria-hidden="true"><i style="background:#d9a441"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler</h1>
+</header>
+
+<main>
+  <a class="app meadow" href="https://meadow.cryptoler.net">
+    <div class="cover"><img src="assets/meadow.jpg" alt="" width="800" height="420"></div>
+    <div class="about">
+      <div class="top"><h2>Nobody's Meadow</h2><span class="tag">Game</span></div>
+      <p>A small meadow that keeps its own time. Rabbits, foxes and bees live their lives, season after season.</p>
+      <span class="url">meadow.cryptoler.net</span>
+    </div>
+  </a>
+
+  <a class="app eye" href="https://eye.cryptoler.net">
+    <div class="cover eye" aria-hidden="true"><div class="lockup">THE<img src="assets/eye.svg" alt="" width="220" height="150">EYE</div></div>
+    <div class="about">
+      <div class="top"><h2>The Eye</h2><span class="tag">Chat · sign in</span></div>
+      <p>A realtime chat with direct messages, a public #GLOBAL channel and slash commands.</p>
+      <span class="url">eye.cryptoler.net</span>
+    </div>
+  </a>
+
+  <a class="app odemark" href="https://odemark.cryptoler.net">
+    <div class="cover odemark" aria-hidden="true">
+      <img src="assets/odemark.jpg" alt="" width="800" height="400">
+      <div class="mark">
+        <svg viewBox="0 0 62 30">
+          <path d="M2 24 L16 9 L25 17 L34 5 L48 24 Z" fill="#201e1d"/>
+          <circle cx="52" cy="7" r="5" fill="#c67139"/>
+          <path d="M6 27.5 H44 M14 30 H52" stroke="#201e1d" stroke-width="1.4" fill="none"/>
+        </svg>
+        <b>ÖDEMARK</b>
+      </div>
+    </div>
+    <div class="about">
+      <div class="top"><h2>Ödemark</h2><span class="tag">Field journal · private</span></div>
+      <p>A private map and journal of places worth walking to.</p>
+      <span class="url">odemark.cryptoler.net</span>
+    </div>
+  </a>
+</main>
+
+<footer><a href="https://github.com/askel-dev">askel-dev on GitHub</a></footer>
+
+</body>
+</html>
