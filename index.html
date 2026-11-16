@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>cryptoler</title>
-<meta name="description" content="nibblet, Nobody's Meadow, Noctiluca, The Eye and Ödemark: five things made by cryptoler.">
+<title>cryptoler — Browser games, simulations &amp; web projects</title>
+<meta name="description" content="Browser games and simulations by indie developer Axel Jönsson (cryptoler), including nibblet, Nobody's Meadow, and Noctiluca.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://www.cryptoler.net/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <!-- The link preview. og.jpg is drawn from tools/og.html (see the README); bump ?v= when it changes,
      since Messages, Slack and friends keep a preview by its image URL for weeks. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="cryptoler">
-<meta property="og:title" content="cryptoler">
-<meta property="og:description" content="nibblet, Nobody's Meadow, Noctiluca, The Eye and Ödemark: five things made by cryptoler.">
+<meta property="og:title" content="cryptoler — Browser games, simulations &amp; web projects">
+<meta property="og:description" content="Browser games and simulations by indie developer Axel Jönsson (cryptoler), including nibblet, Nobody's Meadow, and Noctiluca.">
 <meta property="og:url" content="https://www.cryptoler.net/">
 <meta property="og:image" content="https://www.cryptoler.net/og.jpg?v=5">
 <meta property="og:image:type" content="image/jpeg">
@@ -24,6 +25,23 @@
 <meta property="og:image:alt" content="Five cards: nibblet, Nobody's Meadow, Noctiluca, The Eye and Ödemark, with cryptoler in the middle">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.cryptoler.net/og.jpg?v=5">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "cryptoler",
+  "alternateName": "cryptoler.net",
+  "url": "https://www.cryptoler.net/",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Axel Jönsson",
+    "alternateName": "cryptoler",
+    "jobTitle": "Indie developer",
+    "sameAs": "https://github.com/askel-dev"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Only the two faces the covers need: The Eye's Cinzel and Ödemark's IM Fell. The rest is the system's. -->
@@ -79,6 +97,8 @@
     padding: 56px max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left));
   }
 
+  header { display: grid; justify-items: center; gap: 8px; text-align: center; }
+  header p { margin: 0; color: var(--muted); }
   h1 {
     margin: 0;
     display: flex;
@@ -186,6 +206,7 @@
 
 <header>
   <h1><span class="dots" aria-hidden="true"><i style="background:#e4473a"></i><i style="background:#d9a441"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler</h1>
+  <p>Browser games and web projects by indie developer Axel Jönsson.</p>
 </header>
 
 <main>
@@ -211,7 +232,7 @@
     <div class="cover"><img src="assets/noctiluca.jpg" alt="" width="800" height="420"></div>
     <div class="about">
       <div class="top"><h2>Noctiluca</h2><span class="tag">Ambient · sound</span></div>
-      <p>A boids simulation in JavaScript with nice visuals.</p>
+      <p>An ambient boids simulation in JavaScript. Bioluminescent organisms flock through dark water and make sound as they move.</p>
       <span class="url">boids.cryptoler.net</span>
     </div>
   </a>

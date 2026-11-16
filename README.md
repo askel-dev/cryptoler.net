@@ -11,7 +11,11 @@ The front page of cryptoler.net: one static page linking to each project on its 
 | Ödemark | https://odemark.cryptoler.net | Oracle Cloud server with Caddy, repo `askel-dev/odemark` |
 
 This page is a Vercel project of its own, holding `cryptoler.net` and `www.cryptoler.net`.
-Pushing to `main` deploys it. There is no build step: `index.html`, `favicon.svg` and `assets/`.
+Pushing to `main` deploys the static files without a build step.
+
+Vercel redirects the apex domain to `https://www.cryptoler.net/`. That URL is the homepage canonical
+and the only entry in `sitemap.xml`. The project subdomains have independent deployments.
+Keep the homepage cards and the project summaries in `llms.txt` in sync when updating the directory.
 
 The domain's DNS lives in Vercel (Namecheap only holds the registration). Vercel answers for every
 subdomain by default, so a project hosted elsewhere needs its own record there: `odemark` is an A record
