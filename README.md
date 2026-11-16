@@ -4,8 +4,8 @@ The front page of cryptoler.net: one static page linking to each project on its 
 
 | Project | Address | Hosted on |
 |---|---|---|
-| Nobody's Meadow | https://meadow.cryptoler.net | GitHub Pages, repo `askel-dev/aeon-garden` |
 | nibblet | https://nibblet.cryptoler.net | Vercel, repo `askel-dev/long-shot` |
+| Nobody's Meadow | https://meadow.cryptoler.net | GitHub Pages, repo `askel-dev/aeon-garden` |
 | Noctiluca | https://boids.cryptoler.net | GitHub Pages, repo `askel-dev/NOCTILUCA` |
 | The Eye | https://eye.cryptoler.net | Vercel, repo `askel-dev/the-eye` (data and logins in Supabase) |
 | Ödemark | https://odemark.cryptoler.net | Oracle Cloud server with Caddy, repo `askel-dev/odemark` |
@@ -17,7 +17,7 @@ The domain's DNS lives in Vercel (Namecheap only holds the registration). Vercel
 subdomain by default, so a project hosted elsewhere needs its own record there: `odemark` is an A record
 to the Oracle server, `meadow` and `boids` CNAMEs to `askel-dev.github.io`.
 
-Each card's cover is its project's own first screen in miniature: the meadow's share picture, nibblet's opening scene at dusk (the production build at 1280×720, key hint hidden, bottom 48 px cropped),
+Each card's cover is its project's own first screen in miniature: the meadow's share picture, nibblet's planned title screen (the wordmark over the morning scene, `?h=9.5&x=-90`, as in long-shot's `artifacts/brand-study/round-2-bobber.html`),
 Noctiluca's splash over the live flock (captured from the page, prompt hidden), The Eye's login lockup (`assets/eye.svg`, its logo fixed to black), Ödemark's front page. To add a
 project, copy a `.app` card and give it a colour of its own in `:root`.
 
