@@ -6,8 +6,8 @@
 
 - [cryptoler homepage](https://www.cryptoler.net/): The project directory.
 - [nibblet](https://nibblet.cryptoler.net/): cozy pixel-art fishing game
-- [Noctiluca](https://boids.cryptoler.net/): An ambient boids simulation in JavaScript.
 - [ingenium](https://github.com/askel-dev/ingenium): A GPU-driven forest renderer in Rust and wgpu.
+- [Noctiluca](https://boids.cryptoler.net/): An ambient boids simulation in JavaScript.
 - [Nobody's Meadow](https://meadow.cryptoler.net/): Survival cooking game
 
 ## Optional
