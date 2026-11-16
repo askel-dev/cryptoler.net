@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>cryptoler — Browser games, simulations &amp; web projects</title>
-<meta name="description" content="Browser games and simulations by indie developer Axel Jönsson (cryptoler), including nibblet, Nobody's Meadow, and Noctiluca.">
+<title>cryptoler — Browser games, simulations &amp; graphics</title>
+<meta name="description" content="Browser games, simulations, and graphics projects by indie developer Axel Jönsson, including nibblet, Nobody's Meadow, Noctiluca, and ingenium.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
@@ -15,16 +15,16 @@
      since Messages, Slack and friends keep a preview by its image URL for weeks. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="cryptoler">
-<meta property="og:title" content="cryptoler — Browser games, simulations &amp; web projects">
-<meta property="og:description" content="Browser games and simulations by indie developer Axel Jönsson (cryptoler), including nibblet, Nobody's Meadow, and Noctiluca.">
+<meta property="og:title" content="cryptoler — Browser games, simulations &amp; graphics">
+<meta property="og:description" content="Browser games, simulations, and graphics projects by indie developer Axel Jönsson, including nibblet, Nobody's Meadow, Noctiluca, and ingenium.">
 <meta property="og:url" content="https://www.cryptoler.net/">
-<meta property="og:image" content="https://www.cryptoler.net/og.jpg?v=5">
+<meta property="og:image" content="https://www.cryptoler.net/og.jpg?v=6">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Five cards: nibblet, Nobody's Meadow, Noctiluca, The Eye and Ödemark, with cryptoler in the middle">
+<meta property="og:image:alt" content="Project covers for nibblet, Nobody's Meadow, Noctiluca, ingenium, and The Eye around the cryptoler wordmark">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.cryptoler.net/og.jpg?v=5">
+<meta name="twitter:image" content="https://www.cryptoler.net/og.jpg?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,8 +44,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Only the two faces the covers need: The Eye's Cinzel and Ödemark's IM Fell. The rest is the system's. -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f3f1ec;
@@ -59,7 +58,7 @@
     --nibblet: #c23a2f;
     --noctiluca: #1d6a8f;
     --eye: #2a6a4a;
-    --odemark: #8c491a;
+    --ingenium: #635b30;
     --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
@@ -75,7 +74,7 @@
       --nibblet: #f2857a;
       --noctiluca: #78dcff;
       --eye: #6fae8c;
-      --odemark: #e9975c;
+      --ingenium: #c9c189;
     }
   }
 
@@ -140,7 +139,7 @@
   .app.nibblet { --accent: var(--nibblet); }
   .app.noctiluca { --accent: var(--noctiluca); }
   .app.eye { --accent: var(--eye); }
-  .app.odemark { --accent: var(--odemark); }
+  .app.ingenium { --accent: var(--ingenium); }
 
   .about { flex: 1; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 18px; }
   .about .top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
@@ -156,7 +155,7 @@
   .url::after { content: "→"; display: inline-block; margin-left: .5em; transition: transform .2s ease; }
   .app:hover .url::after { transform: translateX(3px); }
 
-  /* Each cover is its app's own first screen, in miniature. Its colours stay the app's in dark mode too. */
+  /* Cover colours stay the same in dark mode. */
   .cover {
     position: relative;
     aspect-ratio: 1200 / 630;
@@ -178,20 +177,6 @@
   }
   .lockup img { width: 23cqw; height: auto; }
 
-  /* Ödemark: the front page, a photo fading into paper */
-  .cover.odemark { background: #f5ead8; color: #201e1d; }
-  .cover.odemark img {
-    position: absolute;
-    inset: 0 0 auto;
-    height: 62%;
-    object-position: 50% 45%;
-    -webkit-mask-image: linear-gradient(#000 45%, transparent);
-    mask-image: linear-gradient(#000 45%, transparent);
-  }
-  .cover.odemark .mark { position: absolute; left: 6.5cqw; bottom: 5.5cqw; display: flex; flex-direction: column; gap: 2.2cqw; }
-  .cover.odemark svg { width: 10cqw; height: auto; display: block; }
-  .cover.odemark b { font: 400 7.5cqw/1 "IM Fell DW Pica", Georgia, serif; letter-spacing: .02em; }
-
   footer { display: flex; gap: 10px; font-size: 13px; color: var(--muted); }
   footer a { color: inherit; text-underline-offset: 3px; }
   footer a:hover { color: var(--text); }
@@ -206,7 +191,7 @@
 
 <header>
   <h1><span class="dots" aria-hidden="true"><i style="background:#e4473a"></i><i style="background:#d9a441"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler</h1>
-  <p>Browser games and web projects by indie developer Axel Jönsson.</p>
+  <p>Browser games, simulations, and graphics projects by indie developer Axel Jönsson.</p>
 </header>
 
 <main>
@@ -237,31 +222,21 @@
     </div>
   </a>
 
+  <a class="app ingenium" href="https://github.com/askel-dev/ingenium">
+    <div class="cover"><img src="assets/ingenium.jpg" alt="" width="1280" height="672" loading="lazy"></div>
+    <div class="about">
+      <div class="top"><h2>ingenium</h2><span class="tag">Forest renderer</span></div>
+      <p>A GPU-driven forest renderer in Rust and wgpu. Fly over a procedural valley with dense forests, shifting sunlight, and volumetric clouds.</p>
+      <span class="url">github.com/askel-dev/ingenium</span>
+    </div>
+  </a>
+
   <a class="app eye" href="https://eye.cryptoler.net">
     <div class="cover eye" aria-hidden="true"><div class="lockup">THE<img src="assets/eye.svg" alt="" width="220" height="150">EYE</div></div>
     <div class="about">
       <div class="top"><h2>The Eye</h2><span class="tag">Chat · closed</span></div>
       <p>Realtime chat for close friends. It said its last goodbye on October 23, 2026, after a lot of good conversations.</p>
       <span class="url">eye.cryptoler.net</span>
-    </div>
-  </a>
-
-  <a class="app odemark" href="https://odemark.cryptoler.net">
-    <div class="cover odemark" aria-hidden="true">
-      <img src="assets/odemark.jpg" alt="" width="800" height="400">
-      <div class="mark">
-        <svg viewBox="0 0 62 30">
-          <path d="M2 24 L16 9 L25 17 L34 5 L48 24 Z" fill="#201e1d"/>
-          <circle cx="52" cy="7" r="5" fill="#c67139"/>
-          <path d="M6 27.5 H44 M14 30 H52" stroke="#201e1d" stroke-width="1.4" fill="none"/>
-        </svg>
-        <b>ÖDEMARK</b>
-      </div>
-    </div>
-    <div class="about">
-      <div class="top"><h2>Ödemark</h2><span class="tag">Field journal · private</span></div>
-      <p>An unfinished journaling site.</p>
-      <span class="url">odemark.cryptoler.net</span>
     </div>
   </a>
 </main>

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap" rel="stylesheet">
 <style>
   html, body { margin: 0; }
   body { width: 1200px; height: 630px; background: #f3f1ec; position: relative; overflow: hidden; }
@@ -21,15 +21,6 @@
   .lockup { display: flex; align-items: center; gap: 3.5cqw; color: #1a1a1a; font: 400 7cqw/1 Cinzel, Georgia, serif; letter-spacing: .1em; }
   .lockup img { width: 23cqw; height: auto; }
 
-  .cover.odemark { background: #f5ead8; color: #201e1d; }
-  .cover.odemark > img {
-    position: absolute; inset: 0 0 auto; height: 62%; object-position: 50% 45%;
-    -webkit-mask-image: linear-gradient(#000 45%, transparent); mask-image: linear-gradient(#000 45%, transparent);
-  }
-  .cover.odemark .mark { position: absolute; left: 6.5cqw; bottom: 5.5cqw; display: flex; flex-direction: column; gap: 2.2cqw; }
-  .cover.odemark svg { width: 10cqw; height: auto; display: block; }
-  .cover.odemark b { font: 400 7.5cqw/1 "IM Fell DW Pica", Georgia, serif; letter-spacing: .02em; }
-
   .badge {
     position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
     display: flex; align-items: center; gap: 18px;
@@ -45,17 +36,7 @@
 <div class="grid">
   <div class="cover"><img src="../assets/nibblet.jpg" alt=""></div>
   <div class="cover eye"><div class="lockup">THE<img src="../assets/eye.svg" alt="">EYE</div></div>
-  <div class="cover odemark">
-    <img src="../assets/odemark.jpg" alt="">
-    <div class="mark">
-      <svg viewBox="0 0 62 30">
-        <path d="M2 24 L16 9 L25 17 L34 5 L48 24 Z" fill="#201e1d"/>
-        <circle cx="52" cy="7" r="5" fill="#c67139"/>
-        <path d="M6 27.5 H44 M14 30 H52" stroke="#201e1d" stroke-width="1.4" fill="none"/>
-      </svg>
-      <b>ÖDEMARK</b>
-    </div>
-  </div>
+  <div class="cover"><img src="../assets/ingenium.jpg" alt=""></div>
   <div class="cover"><img src="../assets/meadow.jpg" alt=""></div>
   <div class="cover"><img src="../assets/noctiluca.jpg" alt=""></div>
 </div>
