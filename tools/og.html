@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- The link preview (og.jpg, 1200x630): the four covers two by two, the name over the middle.
+<!-- The link preview (og.jpg, 1200x630): the five covers, three over two (the wide bottom row for the covers with words at their edges), the name over the middle.
      Redraw it when a card changes; the README says how. The cover rules are the ones in index.html. -->
 <html lang="en">
 <head>
@@ -10,8 +10,10 @@
   body { width: 1200px; height: 630px; background: #f3f1ec; position: relative; overflow: hidden; }
   .grid {
     position: absolute; inset: 0; padding: 12px;
-    display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px;
+    display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 1fr 1fr; gap: 12px;
   }
+  .grid > .cover { grid-column: span 2; }
+  .grid > .cover:nth-child(n+4) { grid-column: span 3; }
   .cover { position: relative; overflow: hidden; border-radius: 14px; container-type: inline-size; }
   .cover > img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
@@ -41,8 +43,7 @@
 </head>
 <body>
 <div class="grid">
-  <div class="cover"><img src="../assets/meadow.jpg" alt=""></div>
-  <div class="cover"><img src="../assets/noctiluca.jpg" alt=""></div>
+  <div class="cover"><img src="../assets/nibblet.jpg" alt=""></div>
   <div class="cover eye"><div class="lockup">THE<img src="../assets/eye.svg" alt="">EYE</div></div>
   <div class="cover odemark">
     <img src="../assets/odemark.jpg" alt="">
@@ -55,9 +56,11 @@
       <b>ÖDEMARK</b>
     </div>
   </div>
+  <div class="cover"><img src="../assets/meadow.jpg" alt=""></div>
+  <div class="cover"><img src="../assets/noctiluca.jpg" alt=""></div>
 </div>
 <div class="badge">
-  <span class="dots"><i style="background:#d9a441"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler
+  <span class="dots"><i style="background:#d9a441"></i><i style="background:#e4473a"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler
 </div>
 </body>
 </html>

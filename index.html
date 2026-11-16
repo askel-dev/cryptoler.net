@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>cryptoler</title>
-<meta name="description" content="Nobody's Meadow, Noctiluca, The Eye and Ödemark: four things made by cryptoler.">
+<meta name="description" content="Nobody's Meadow, nibblet, Noctiluca, The Eye and Ödemark: five things made by cryptoler.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
@@ -15,15 +15,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="cryptoler">
 <meta property="og:title" content="cryptoler">
-<meta property="og:description" content="Nobody's Meadow, Noctiluca, The Eye and Ödemark: four things made by cryptoler.">
+<meta property="og:description" content="Nobody's Meadow, nibblet, Noctiluca, The Eye and Ödemark: five things made by cryptoler.">
 <meta property="og:url" content="https://www.cryptoler.net/">
-<meta property="og:image" content="https://www.cryptoler.net/og.jpg?v=3">
+<meta property="og:image" content="https://www.cryptoler.net/og.jpg?v=4">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Four cards: Nobody's Meadow, Noctiluca, The Eye and Ödemark, with cryptoler in the middle">
+<meta property="og:image:alt" content="Five cards: Nobody's Meadow, nibblet, Noctiluca, The Eye and Ödemark, with cryptoler in the middle">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.cryptoler.net/og.jpg?v=3">
+<meta name="twitter:image" content="https://www.cryptoler.net/og.jpg?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Only the two faces the covers need: The Eye's Cinzel and Ödemark's IM Fell. The rest is the system's. -->
@@ -38,6 +38,7 @@
     --shadow: 0 1px 2px rgba(29, 28, 26, .05), 0 10px 28px -14px rgba(29, 28, 26, .2);
     --lift: 0 2px 4px rgba(29, 28, 26, .06), 0 20px 44px -18px rgba(29, 28, 26, .32);
     --meadow: #4f7d39;
+    --nibblet: #c23a2f;
     --noctiluca: #1d6a8f;
     --eye: #2a6a4a;
     --odemark: #8c491a;
@@ -53,6 +54,7 @@
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 28px -14px rgba(0, 0, 0, .7);
       --lift: 0 2px 4px rgba(0, 0, 0, .35), 0 20px 44px -18px rgba(0, 0, 0, .85);
       --meadow: #9cc77e;
+      --nibblet: #f2857a;
       --noctiluca: #78dcff;
       --eye: #6fae8c;
       --odemark: #e9975c;
@@ -115,6 +117,7 @@
   .app:hover { transform: translateY(-3px); box-shadow: var(--lift); }
   .app:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .app.meadow { --accent: var(--meadow); }
+  .app.nibblet { --accent: var(--nibblet); }
   .app.noctiluca { --accent: var(--noctiluca); }
   .app.eye { --accent: var(--eye); }
   .app.odemark { --accent: var(--odemark); }
@@ -182,7 +185,7 @@
 <body>
 
 <header>
-  <h1><span class="dots" aria-hidden="true"><i style="background:#d9a441"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler</h1>
+  <h1><span class="dots" aria-hidden="true"><i style="background:#d9a441"></i><i style="background:#e4473a"></i><i style="background:#4fb6e0"></i><i style="background:#3f8a64"></i><i style="background:#c67139"></i></span>cryptoler</h1>
 </header>
 
 <main>
@@ -192,6 +195,15 @@
       <div class="top"><h2>Nobody's Meadow</h2><span class="tag">Cooking game</span></div>
       <p>A cozy cooking game in the browser, made with the help of Claude. Forage by day, cook by firelight.</p>
       <span class="url">meadow.cryptoler.net</span>
+    </div>
+  </a>
+
+  <a class="app nibblet" href="https://nibblet.cryptoler.net">
+    <div class="cover"><img src="assets/nibblet.jpg" alt="" width="800" height="420"></div>
+    <div class="about">
+      <div class="top"><h2>nibblet</h2><span class="tag">Fishing game</span></div>
+      <p>A cozy pixel-art fishing game in the browser. Sit on the dock, watch the day go by and the weather turn, and wait for something rare to bite.</p>
+      <span class="url">nibblet.cryptoler.net</span>
     </div>
   </a>
 
