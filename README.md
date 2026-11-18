@@ -4,7 +4,7 @@ The front page of cryptoler.net is a static directory of projects.
 
 | Project | Address | Hosted on |
 |---|---|---|
-| nibblet | https://nibblet.cryptoler.net | Vercel, repo `askel-dev/long-shot` |
+| nibblet | https://nibblet.io (nibblet.cryptoler.net redirects) | Vercel, repo `askel-dev/long-shot` |
 | Nobody's Meadow | https://meadow.cryptoler.net | GitHub Pages, repo `askel-dev/aeon-garden` |
 | Noctiluca | https://boids.cryptoler.net | GitHub Pages, repo `askel-dev/NOCTILUCA` |
 | ingenium | https://github.com/askel-dev/ingenium | Native Rust project on GitHub |
