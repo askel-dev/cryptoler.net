@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>cryptoler — Browser games, simulations &amp; graphics</title>
+<title>cryptoler: browser games, simulations &amp; graphics</title>
 <meta name="description" content="Browser games, simulations, and graphics projects by indie developer Axel Jönsson, including nibblet, Nobody's Meadow, Noctiluca, and ingenium.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
@@ -15,7 +15,7 @@
      since Messages, Slack and friends keep a preview by its image URL for weeks. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="cryptoler">
-<meta property="og:title" content="cryptoler — Browser games, simulations &amp; graphics">
+<meta property="og:title" content="cryptoler: browser games, simulations &amp; graphics">
 <meta property="og:description" content="Browser games, simulations, and graphics projects by indie developer Axel Jönsson, including nibblet, Nobody's Meadow, Noctiluca, and ingenium.">
 <meta property="og:url" content="https://www.cryptoler.net/">
 <meta property="og:image" content="https://www.cryptoler.net/og.jpg?v=6">
@@ -25,21 +25,123 @@
 <meta property="og:image:alt" content="Project covers for nibblet, Nobody's Meadow, Noctiluca, ingenium, and The Eye around the cryptoler wordmark">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.cryptoler.net/og.jpg?v=6">
+<!-- What search engines and AI answers read about the site: who makes it, and each card as a project.
+     Keep the projects in the order and words of the cards below (and llms.txt). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "cryptoler",
-  "alternateName": "cryptoler.net",
-  "url": "https://www.cryptoler.net/",
-  "inLanguage": "en",
-  "author": {
-    "@type": "Person",
-    "name": "Axel Jönsson",
-    "alternateName": "cryptoler",
-    "jobTitle": "Indie developer",
-    "sameAs": "https://github.com/askel-dev"
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.cryptoler.net/#website",
+      "name": "cryptoler",
+      "alternateName": "cryptoler.net",
+      "url": "https://www.cryptoler.net/",
+      "inLanguage": "en",
+      "author": { "@id": "https://www.cryptoler.net/#axel" },
+      "publisher": { "@id": "https://www.cryptoler.net/#axel" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.cryptoler.net/#axel",
+      "name": "Axel Jönsson",
+      "alternateName": "cryptoler",
+      "jobTitle": "Indie developer",
+      "url": "https://www.cryptoler.net/",
+      "sameAs": ["https://github.com/askel-dev", "https://www.youtube.com/@cryptoler"]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.cryptoler.net/#page",
+      "url": "https://www.cryptoler.net/",
+      "name": "cryptoler: browser games, simulations & graphics",
+      "isPartOf": { "@id": "https://www.cryptoler.net/#website" },
+      "about": { "@id": "https://www.cryptoler.net/#axel" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Projects by cryptoler",
+        "itemListOrder": "https://schema.org/ItemListUnordered",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "VideoGame",
+              "name": "nibblet",
+              "url": "https://nibblet.io/",
+              "image": "https://www.cryptoler.net/assets/nibblet.jpg",
+              "description": "A cozy pixel-art fishing game in the browser. Cast from the dock, fight what bites, sell your catch at Biscuit's and fill your journal.",
+              "genre": ["Fishing", "Cozy"],
+              "gamePlatform": "Web browser",
+              "applicationCategory": "GameApplication",
+              "operatingSystem": "Any",
+              "isAccessibleForFree": true,
+              "author": { "@id": "https://www.cryptoler.net/#axel" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareSourceCode",
+              "name": "ingenium",
+              "url": "https://github.com/askel-dev/ingenium",
+              "codeRepository": "https://github.com/askel-dev/ingenium",
+              "image": "https://www.cryptoler.net/assets/ingenium.jpg",
+              "description": "A GPU-driven forest renderer in Rust and wgpu: a procedural valley with dense forests, shifting sunlight and volumetric clouds.",
+              "programmingLanguage": ["Rust", "WGSL"],
+              "author": { "@id": "https://www.cryptoler.net/#axel" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "WebApplication",
+              "name": "Noctiluca",
+              "url": "https://boids.cryptoler.net/",
+              "image": "https://www.cryptoler.net/assets/noctiluca.jpg",
+              "description": "An ambient boids simulation in JavaScript: bioluminescent organisms flock through dark water and make sound as they move.",
+              "applicationCategory": "EntertainmentApplication",
+              "operatingSystem": "Any",
+              "isAccessibleForFree": true,
+              "author": { "@id": "https://www.cryptoler.net/#axel" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "WebApplication",
+              "name": "The Eye",
+              "url": "https://eye.cryptoler.net/",
+              "description": "A realtime chat for close friends, closed on October 23, 2026. Its public channel is archived.",
+              "applicationCategory": "CommunicationApplication",
+              "operatingSystem": "Any",
+              "author": { "@id": "https://www.cryptoler.net/#axel" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "VideoGame",
+              "name": "Nobody's Meadow",
+              "url": "https://meadow.cryptoler.net/",
+              "image": "https://www.cryptoler.net/assets/meadow.jpg",
+              "description": "A survival cooking game in the browser. Forage by day and cook by firelight.",
+              "genre": ["Cooking", "Survival"],
+              "gamePlatform": "Web browser",
+              "applicationCategory": "GameApplication",
+              "operatingSystem": "Any",
+              "isAccessibleForFree": true,
+              "author": { "@id": "https://www.cryptoler.net/#axel" }
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">

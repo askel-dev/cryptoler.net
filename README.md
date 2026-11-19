@@ -15,7 +15,8 @@ Pushing to `main` deploys the static files without a build step.
 
 Vercel redirects the apex domain to `https://www.cryptoler.net/`. That URL is the homepage canonical
 and the only entry in `sitemap.xml`. The project subdomains have independent deployments.
-Keep the homepage cards and the project summaries in `llms.txt` in sync when updating the directory.
+Keep the homepage cards, the project list in the JSON-LD in `<head>` and the summaries in `llms.txt` in sync when
+updating the directory, and bump `<lastmod>` in `sitemap.xml`.
 
 The domain's DNS lives in Vercel (Namecheap only holds the registration). Vercel answers for every
 subdomain by default, so a project hosted elsewhere needs its own record there: `odemark` is an A record
